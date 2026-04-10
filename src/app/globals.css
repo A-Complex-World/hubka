@@ -1,12 +1,59 @@
 @import "tailwindcss";
+
 @theme {
-  --color-primary: #2d5a27;
-  --color-primary-light: #3d7a35;
-  --color-primary-dark: #1e3d1a;
-  --color-accent: #c9a84c;
-  --color-warm: #f5f0e8;
-  --color-navy: #1a1a2e;
-  --font-heading: "DM Serif Display", Georgia, serif;
+  --color-charcoal: #2a2a2a;
+  --color-charcoal-light: #3d3d3d;
+  --color-terracotta: #c4704b;
+  --color-terracotta-light: #d4855f;
+  --color-terracotta-dark: #a85c3a;
+  --color-cream: #f7f3ee;
+  --color-cream-dark: #ede6da;
+  --color-sage: #8a9a7b;
+  --color-sage-light: #a3b394;
+  --color-warm-white: #faf8f5;
+  --color-ink: #1a1816;
+  --font-heading: var(--font-cormorant), "Georgia", serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
 }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-body { color: #1a1a2e; -webkit-font-smoothing: antialiased; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background: var(--color-warm-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Horizontal rule styling */
+.editorial-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--color-terracotta);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-charcoal-light); border-radius: 3px; }
+
+/* Selection */
+::selection {
+  background: var(--color-terracotta);
+  color: white;
+}
