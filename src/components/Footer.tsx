@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsLink } from "@/components/CookieConsent";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
@@ -131,6 +132,7 @@ export default function Footer() {
               >
                 Datenschutz
               </Link>
+            <CookieSettingsLink />
             </div>
           </div>
         </div>

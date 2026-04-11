@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import GoogleMapsEmbed from "@/components/GoogleMapsEmbed";
 
 const contactInfo = [
   {
@@ -109,15 +110,7 @@ export default function Kontakt() {
         <div className="max-w-5xl mx-auto px-6 sm:px-10">
           <ScrollReveal>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661!2d11.578!3d48.162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2sBelgradstr.+26,+80796+München!5e0!3m2!1sde!2sde!4v1"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Standort Malermeister Hubka"
-              />
+              <GoogleMapsEmbed src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661!2d11.578!3d48.162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2sBelgradstr.+26,+80796+M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1" style={{ minHeight: 450 }} title="Standort Malermeister Hubka" />
             </div>
           </ScrollReveal>
         </div>
